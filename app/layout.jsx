@@ -1,10 +1,10 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 
 // components
 import Navbar from './components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const rubik = Rubik({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,13 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        {/* <nav>
-          <h1>Helpdesk</h1>
-          <Link href="/">Dashboard</Link>
-          <Link href="/tickets">Tickets</Link>
-        </nav> */}
+      <body className={rubik.className}>
         <Navbar />
-      <body className={inter.className}>{children}</body>
+        {children}
+      </body>
     </html>
   )
 }
