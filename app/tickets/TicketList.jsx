@@ -1,11 +1,11 @@
-const getTicket = async () => {
+const getTickets = async () => {
     const res = await fetch("http://localhost:4000/tickets", {next: {revalidate: 0}})
     
     return res.json()
 }
 
 export default async function TicketList() {
-    const tickets = await getTicket()
+    const tickets = await getTickets()
     console.log(tickets)
     return (
         <>
